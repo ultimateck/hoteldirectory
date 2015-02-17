@@ -11,11 +11,23 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 <context:component-scan base-package="com.hoteldirectory.controller" />
  
 <bean id="viewResolver"
-class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-<property name="viewClass"
-value="org.springframework.web.servlet.view.JstlView" />
-<property name="prefix" value="/WEB-INF/jsp/" />
-<property name="suffix" value=".jsp" />
+	class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	<property name="viewClass"
+	value="org.springframework.web.servlet.view.JstlView" />
+	<property name="prefix" value="/WEB-INF/jsp/" />
+	<property name="suffix" value=".jsp" />
 </bean>
 
+<bean id="dataSource"
+	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	<property name="url" value="jdbc:mysql://localhost:3306/hoteldirectory" />
+	<property name="username" value="root" />
+	<property name="password" value="" />
+</bean>
+
+<bean id="hotelDAO" class="com.hoteldirectory.connectivity.HotelDAOImpl">
+	<property name="dataSource" ref="dataSource" />
+</bean>
 </beans>

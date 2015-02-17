@@ -5,6 +5,8 @@ public class Hotel {
 	private String name;
 	private String address;
 	private int city;
+	private String cityName;
+	private int status;
 	
 	public Hotel(){
 	
@@ -49,6 +51,23 @@ public class Hotel {
 	public void setCity(int city) {
 		this.city = city;
 	}
+	
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
 	
 
 }

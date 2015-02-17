@@ -23,6 +23,10 @@ public class HotelDAOImpl implements HotelDAO {
 	public HotelDAOImpl(DataSource dataSource) {
 	    jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	public void setDataSource(DataSource dataSource) {
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
 
 	public void saveOrUpdate(Hotel hotel) {
 		// TODO Auto-generated method stub
@@ -51,7 +55,8 @@ public class HotelDAOImpl implements HotelDAO {
 
 	public Hotel get(int Id) {
 		// TODO Auto-generated method stub
-		String sql = "SELECT * FROM tblhotel WHERE id=" + Id;
+		String sql = "SELECT h.*,c.name as cityName FROM tblhotel h LEFT JOIN tblCity c"
+				+ " ON c.ID = h.City h.WHERE id=" + Id +"";
 	    return jdbcTemplate.query(sql, new ResultSetExtractor<Hotel>() {
 	 
 	        public Hotel extractData(ResultSet rs) throws SQLException,
@@ -62,6 +67,8 @@ public class HotelDAOImpl implements HotelDAO {
 	                hotel.setName(rs.getString("name"));
 	                hotel.setAddress(rs.getString("address"));
 	                hotel.setCity(rs.getInt("city"));
+	                hotel.setCityName(rs.getString("cityName"));
+	                hotel.setStatus(rs.getInt("status"));
 	                return hotel;
 	            }
 	 
@@ -74,7 +81,8 @@ public class HotelDAOImpl implements HotelDAO {
 	public List<Hotel> list() {
 		// TODO Auto-generated method stub
 		
-		String sql = "SELECT * FROM tblhotel";
+		String sql = "SELECT h.*,c.name as cityName FROM tblhotel h LEFT JOIN tblCity c"
+				+ " ON c.ID = h.City Order BY h.Id";
 	    List<Hotel> listHotel = jdbcTemplate.query(sql, new RowMapper<Hotel>() {
 	 
 	        public Hotel mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -84,6 +92,8 @@ public class HotelDAOImpl implements HotelDAO {
 	            aHotel.setName(rs.getString("name"));
 	            aHotel.setAddress(rs.getString("address"));
 	            aHotel.setCity(rs.getInt("city"));
+	            aHotel.setCityName(rs.getString("cityName"));
+                aHotel.setStatus(rs.getInt("status"));
 	 
 	            return aHotel;
 	        }

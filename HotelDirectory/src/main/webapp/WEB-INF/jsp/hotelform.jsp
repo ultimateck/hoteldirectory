@@ -7,34 +7,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New/Edit Hotel Details</title>
+<base href="${pageContext.request.contextPath}/">
 </head>
 <body>
     <div align="center">
+    <c:choose>
+        <c:when test="${empty msg}">
         <h1>New/Edit Hotel</h1>
+        <c:choose>
+        <c:when test="${!empty error}"><h3>${error}</h3>
+        </c:when></c:choose>
         <form:form action="saveHotel" method="post" modelAttribute="hotel">
+        <% request.setAttribute("type", "0"); %>
         <table>
             <form:hidden path="id"/>
             <tr>
-                <td>Name:</td>
-                <td><form:input path="name" /></td>
+                <td>Name*:</td>
+                <td><form:input path="name" required="required"/></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><form:input path="email" /></td>
+                <td>Address*:</td>
+                <td><form:input path="address" required="required"/></td>
             </tr>
             <tr>
-                <td>Address:</td>
-                <td><form:input path="address" /></td>
+                <td>City:</td>
+                <td><form:select path="city">
+    				<form:options items="${cityList}" itemValue="id" itemLabel="name"/>
+					</form:select></td>
             </tr>
             <tr>
-                <td>Telephone:</td>
-                <td><form:input path="telephone" /></td>
+                <td>Status:</td>
+                <td><form:input path="status" value="1"/></td>
             </tr>
             <tr>
-                <td colspan="2" align="center"><input type="submit" value="Save"></td>
+                <td colspan="2" align="center"><input type="submit" value="Save">
+                <input type="hidden" id="type" name="type" value ="0"/></td>
             </tr>
         </table>
         </form:form>
+        <div><h3><a href="home">Back</a></h3></div>
+        </c:when>
+        
+        <c:otherwise>
+        	<div><h3>${msg}</h3><h3><a href="list">View List</a></h3>
+        	</div>
+        </c:otherwise>
+        </c:choose>
     </div>
 </body>
 </html>

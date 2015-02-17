@@ -10,8 +10,8 @@
     <body>
         <div align="center">
             <h1>Hotel List</h1>
-            <h3><a href="">New Hotel</a></h3>
-            <table border="1">
+            <h3><a href="saveHotel">New Hotel</a></h3>
+            <table border="">
             	<tr>
 	                <th>No</th>
 	                <th>Name</th>

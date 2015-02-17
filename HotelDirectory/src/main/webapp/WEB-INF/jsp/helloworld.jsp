@@ -14,6 +14,7 @@
 			${message} ${name}
 		</h2>
 		<h3><a href="list">List</a></h3>
+		<h3><a href="saveHotel">Add New Hotel</a></h3>
 	</div>
 </body>
 </html>

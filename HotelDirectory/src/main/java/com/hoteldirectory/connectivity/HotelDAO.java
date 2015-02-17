@@ -2,7 +2,7 @@ package com.hoteldirectory.connectivity;
 
 import java.util.List;
 
-import com.hoteldirectory.model.Hotel;;
+import com.hoteldirectory.model.Hotel;
  
 /**
  * Defines Data Access Object (DAO) operations for the Hotel.

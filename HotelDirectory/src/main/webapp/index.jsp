@@ -6,6 +6,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <title> Home </title>
+<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
 </head>
 <div align="center">
 	

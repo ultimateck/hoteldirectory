@@ -13,7 +13,7 @@
     <div align="center">
     <c:choose>
         <c:when test="${empty msg}">
-        <h1>New/Edit Hotel</h1>
+        <h2>Add New Hotel</h2>
         <c:choose>
         <c:when test="${!empty error}"><h3>${error}</h3>
         </c:when></c:choose>

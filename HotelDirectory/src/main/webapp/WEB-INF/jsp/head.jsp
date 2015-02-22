@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <base href="${pageContext.request.contextPath}/"> 
-<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+
 <div class="header">
 	<div class="wrap">
 		<div class="hcontent">

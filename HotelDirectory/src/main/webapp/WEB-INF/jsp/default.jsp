@@ -7,6 +7,14 @@ pageEncoding="ISO-8859-1"%>
 <head>
 <title> Home </title>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/jquery-ui.min.css.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/jquery-ui.structure.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/jquery-ui.theme.min.css" />" rel="stylesheet">
+
+<script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
+<script src="<c:url value="/resources/js/jquery-ui.min.js" />"></script>
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/head.jsp" />

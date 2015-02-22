@@ -3,8 +3,45 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html >
-<html>
 
+<html>
+<script>
+$(function() {
+$( "input[type=submit],button" )
+.button()
+.click(function( event ) {
+	location.href = "${pageContext.request.contextPath}/search?city="+ $("#citys").val();
+	return false;
+});
+});
+
+$(document).ready(function() {
+	 $(function() {
+		 $( "#citys" ).autocomplete({
+		 source: function (request, response) {
+			 alert("T");
+	            $.getJSON("${pageContext.request.contextPath}/getCity", request, function(result) {
+	                response($.map(result, function(item) {
+	                    return {
+	                        // following property gets displayed in drop down
+	                        label: item.name ,
+	                        // following property gets entered in the textbox
+	                        value: item.name,
+	                        
+	                    };
+	                }));
+	            });
+	        }
+		 });
+		 });});
+</script>
+	<div class="item-container-head" align="center">
+		<div class="ui-widget">
+			<label for="citys">Enter City: </label>
+			<input id="citys">
+			<input type="submit" value="Search">
+		</div>
+	</div>
 
     <div align="center" class="item-container-detail">
             <h1>Hotel List ${city}</h1>

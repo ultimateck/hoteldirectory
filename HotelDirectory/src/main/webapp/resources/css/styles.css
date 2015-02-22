@@ -149,7 +149,7 @@ body {
 .color-gray{background-color: gray;}
 
 .item-container {padding: 5px; display:block; min-height: 450px; margin-top: 10px;
-	background-color: rgba(0, 0, 0, 0.1);}
+	}
 	
 .item-container-detail {padding: 5px; display:block; min-height:300px; margin-top: 10px;
 	background-color: rgba(0, 0, 0, 0.2); border-radius:5px;}

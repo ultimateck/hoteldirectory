@@ -1,6 +1,7 @@
 package com.hoteldirectory.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hoteldirectory.connectivity.CityDAO;
@@ -107,8 +109,31 @@ public class HotelDirectoryController {
 		}
 		List<City> cityList = cityConn.list();
 	    model.addObject("cityList", cityList);
-		model.setViewName("hotelform");
+	    model.addObject("page", "hotelform.jsp");
+		model.setViewName("default");
 	    return model;
+	}
+	
+	@RequestMapping(value = "/getCity", method ={ RequestMethod.GET, RequestMethod.POST })
+	 public @ResponseBody List<City> getCities(@RequestParam String city) {
+		System.out.println(city);
+	 return simulateSearchResult(city);
+	 
+	 
+	}
+	
+	private List<City> simulateSearchResult(String tagName) {
+		 
+		List<City> result = new ArrayList<City>();
+ 
+		List<City> cityList = cityConn.list();
+		for (City city : cityList) {
+			if (city.getName().contains(tagName)) {
+				result.add(city);
+			}
+		}
+ 
+		return result;
 	}
 
 }

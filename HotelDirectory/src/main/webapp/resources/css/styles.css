@@ -17,7 +17,7 @@
 }
 
 .logo span {
-	font-size: 3em;
+	font-size: 2.8em;
 	font-family: Georgia,sans-serif;
 	font-style:italic;
 	color: rgb(255, 255, 255);
@@ -84,14 +84,30 @@
 
 /* Common */
 
-.wrap {
-    width: 1000px;
-    margin: 0px auto;
+h1 {
+	
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+h4 {
+	font-size: 2em;
 }
 
 a {
     text-decoration: none;
     color: rgb(51, 51, 51);
+}
+
+body {
+	background: transparent url(../images/pattern.png) repeat top left;
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0px auto;
 }
 
 .body {
@@ -115,7 +131,10 @@ a {
 
 .btn-top-container div:HOVER {opacity: 0.8;}
 
-.btn-top-container span { margin: 10px auto; position: relative; width:32px; 
+.btn-top-container .icon { margin: 10px auto; position: relative; width:32px; 
+    height:32px; display: block; background-size:cover; color: rgb(255, 255, 255); }
+
+.btn-top-container .text { margin: 10px auto; position: relative; width:64px; text-align:center;
     height:32px; display: block; background-size:cover; color: rgb(255, 255, 255); }
 
 .btn-top{
@@ -128,6 +147,54 @@ a {
 
 .color-green{background-color: rgb(138, 184, 0);}
 .color-gray{background-color: gray;}
+
+.item-container {padding: 5px; display:block; min-height: 450px; margin-top: 10px;
+	background-color: rgba(0, 0, 0, 0.1);}
+	
+.item-container-detail {padding: 5px; display:block; min-height:300px; margin-top: 10px;
+	background-color: rgba(0, 0, 0, 0.2); border-radius:5px;}
+	
+.item-container-head {padding: 5px; display:block; margin-top: 10px;
+	background-color: rgba(0, 0, 0, 0.1); border-radius:5px;}
+
+.item-container .item-menu a {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    font-size: 1.5em;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 1000;
+    background-color: rgb(138, 184, 0);
+    width: 100%;
+    height: 30px;
+    min-width: 1000px;
+}
+
+.copyright {
+	float : left;
+	font-family: arial, sans-serif;
+	padding: 5px;
+}
+
+.footmenu {
+    float: right;
+    font-family: arial,sans-serif;
+    position: relative;
+    z-index: 10000;
+}
+
+.footmenu ul {margin: 0px;}
+
+.footmenu li {
+    float: left;
+    position: relative;
+    list-style-type: none;
+    margin-top: 0px;
+    padding: 5px;
+}
 
 
 /* Game */

@@ -23,23 +23,7 @@ pageEncoding="ISO-8859-1"%>
 			</div>
 			
 			<div class="item-container">
-				<div align="center" class="item-menu item-container-head">
-	
-					<h2>Welcome to Hotel Directory</h2>
-					<h3>
-						<a href="saveHotel">Add New Hotel</a>
-					</h3>
-					<h3>
-						<a href="search">Search Hotel</a>
-					</h3>
-					<h3>
-						<a href="list">View List</a>
-					</h3>
-				</div>
-				
-				<div align="center" class="item-container-detail">
-					<h4>Latest Hotels</h4>
-				</div>
+				<c:import url="${page}"></c:import>
 			</div>
 		</div>
 	</div>

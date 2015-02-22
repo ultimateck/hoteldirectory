@@ -49,13 +49,35 @@ public class HotelDirectoryController {
 	@RequestMapping(value="/list")
 	public ModelAndView hotelList(ModelAndView model) throws IOException{
 		System.out.println("in controller: list");
+		
 		try{
 	    List<Hotel> hotelList = hotelConn.list();
 	    model.addObject("hotelList", hotelList);
-	    model.setViewName("list");
+	    model.addObject("page", "list.jsp");
+	    model.setViewName("default");
 		}catch(Exception ex){
 			model.addObject("error","Connection to database failed !");
-			model.setViewName("list");
+			model.setViewName("default");
+			System.out.println(ex.getMessage());
+		}
+	 
+	    return model;
+	}
+	
+	@RequestMapping(value="/search", method = RequestMethod.GET)
+	public ModelAndView hotelSearch(ModelAndView model, 
+			@RequestParam(value = "city", required = false, defaultValue = "") String city) throws IOException{
+		System.out.println("in controller: list");
+		
+		try{
+		List<Hotel> hotelList = hotelConn.listSearch(city);
+	    model.addObject("hotelList", hotelList);
+	    model.addObject("page", "search.jsp");
+	    model.addObject("city", "@" + city);
+	    model.setViewName("default");
+		}catch(Exception ex){
+			model.addObject("error","Connection to database failed !");
+			model.setViewName("default");
 			System.out.println(ex.getMessage());
 		}
 	 

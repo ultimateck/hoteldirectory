@@ -101,5 +101,30 @@ public class HotelDAOImpl implements HotelDAO {
 	    });
 		return listHotel;
 	}
+	
+	public List<Hotel> listSearch(String city) {
+		// TODO Auto-generated method stub
+		
+		String sql = "SELECT h.*,c.name as cityName FROM tblhotel h LEFT JOIN tblCity c"
+				+ " ON c.ID = h.City "
+				+ "WHERE c.name like ? Order BY h.Id";
+	    List<Hotel> listHotel = jdbcTemplate.query(sql, new Object[] {city},new RowMapper<Hotel>() {
+	 
+	        public Hotel mapRow(ResultSet rs, int rowNum) throws SQLException {
+	            Hotel aHotel = new Hotel();
+	 
+	            aHotel.setId(rs.getInt("id"));
+	            aHotel.setName(rs.getString("name"));
+	            aHotel.setAddress(rs.getString("address"));
+	            aHotel.setCity(rs.getInt("city"));
+	            aHotel.setCityName(rs.getString("cityName"));
+                aHotel.setStatus(rs.getInt("status"));
+	 
+	            return aHotel;
+	        }
+	 
+	    });
+		return listHotel;
+	}
 
 }

@@ -67,5 +67,23 @@ public class CityDAOImpl implements CityDAO {
 	    });
 		return listCity;
 	}
+	
+	public List<City> cityTags() {
+		// TODO Auto-generated method stub
+		String sql = "SELECT id,name FROM tblcity WHERE Status != 0";
+	    List<City> listCity = jdbcTemplate.query(sql, new RowMapper<City>() {
+	 
+	        public City mapRow(ResultSet rs, int rowNum) throws SQLException {
+	            City city = new City();
+	 
+	            city.setId(rs.getInt("id"));
+	            city.setName(rs.getString("name"));
+	 
+	            return city;
+	        }
+	 
+	    });
+		return listCity;
+	}
 
 }

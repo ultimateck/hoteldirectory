@@ -17,5 +17,7 @@ public interface HotelDAO {
     public Hotel get(int Id);
      
     public List<Hotel> list();
+    
+    public List<Hotel> listSearch(String city);
 
 }

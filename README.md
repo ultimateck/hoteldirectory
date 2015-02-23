@@ -14,3 +14,7 @@ Hotel Directory Using Java EE Marven and Spring MVC
 •	Simply Import the project as Import > Git > Projects from Git  and give the repo url
 (EGit Plugin Required) 
 
+1.3 Database
+• Create Database in MySQL named 'HotelDirectory' and restore the database at Database directory.
+• User: "root" Password: ""
+

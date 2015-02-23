@@ -1,7 +1,6 @@
 # hoteldirectory
 Hotel Directory Using Java EE Marven and Spring MVC
 
-1.	Hotel Directory
 1.1	Development Tools
 •	Eclipse Kepler
 •	Maven Build(M2E Plugin)

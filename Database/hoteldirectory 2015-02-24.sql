@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 18, 2015 at 02:28 AM
+-- Generation Time: Feb 23, 2015 at 08:50 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `tblcity` (
   `Status` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Code` (`Code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tblcity`
@@ -42,7 +42,13 @@ CREATE TABLE IF NOT EXISTS `tblcity` (
 INSERT INTO `tblcity` (`ID`, `Code`, `Name`, `Status`) VALUES
 (1, 'GAL', 'Galle', 1),
 (2, 'COL', 'Colombo', 1),
-(3, 'KDY', 'Kandy', 1);
+(3, 'KDY', 'Kandy', 1),
+(4, 'KAL', 'Kalutara', 1),
+(5, 'MTR', 'Matara', 1),
+(6, 'GMP', 'Gampaha', 1),
+(7, 'JFN', 'Jafna', 1),
+(8, 'NEL', 'NuwaraEliya', 1),
+(9, 'AMP', 'Ampara', 1);
 
 -- --------------------------------------------------------
 
@@ -58,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tblhotel` (
   `Status` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`),
   KEY `City` (`City`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `tblhotel`
@@ -66,9 +72,11 @@ CREATE TABLE IF NOT EXISTS `tblhotel` (
 
 INSERT INTO `tblhotel` (`ID`, `Name`, `Address`, `City`, `Status`) VALUES
 (1, 'Test', 'Test Address', 1, 1),
-(2, '', '', 2, 1),
+(2, 'Cinnamon Grand', 'Colombo', 2, 1),
 (3, '', '', 3, 1),
-(4, 'Test2', '123', 1, 1);
+(4, 'Test2', '123', 1, 1),
+(5, 'New Hotel', 'Colombo 5', 2, 1),
+(6, 'Test Hotel 2', 'galle Road', 1, 1);
 
 --
 -- Constraints for dumped tables

@@ -37,23 +37,19 @@ $('#list').click( function() {
 			<div class="btn-top-container">
 			<div id ="new" class="btn-top color-green"><span class="icon-more-w icon"></span><span class="text">New</span></div>
 			<div id="search" class="btn-top color-gray"><span class="icon-join-w icon"></span><span class="text">Search</span></div>
-			<div id="list"  class="btn-top color-green"><span class="icon-leave-w icon"></span><span class="text">Hotel List</span></div>
+			<div id="list"  class="btn-top color-green"><span class="icon-list-w icon"></span><span class="text">Hotel List</span></div>
 			<div id="help" class="btn-top color-gray"><span class="icon-help-w icon"></span><span class="text">Help</span></div>
 			</div>
 			
 			<div class="item-container">
-				<div align="center" class="item-menu item-container-head">
+				<div align="center" class=" item-container-head">
 	
-					<h2>Welcome to Hotel Directory</h2>
-					<h3>
-						<a href="saveHotel">Add New Hotel</a>
-					</h3>
-					<h3>
-						<a href="search">Search Hotel</a>
-					</h3>
-					<h3>
-						<a href="list">View List</a>
-					</h3>
+					<h2>Welcome to Hotel Directory</h2><br>
+					
+						<h3><a href="saveHotel" class="btn">Add New Hotel</a></h3><br>
+						<h3><a href="search" class="btn">Search Hotel</a></h3><br>
+						<h3><a href="list" class="btn">View List</a></h3><br>
+					
 				</div>
 				
 				<div align="center" class="item-container-detail">

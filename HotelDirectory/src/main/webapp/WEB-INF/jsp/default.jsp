@@ -15,6 +15,23 @@ pageEncoding="ISO-8859-1"%>
 <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery-ui.min.js" />"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+$('#new').click( function() { 
+	location.href = "${pageContext.request.contextPath}/saveHotel";
+	return false;
+	} );
+$('#search').click( function() { 
+	location.href = "${pageContext.request.contextPath}/search";
+	return false;
+	} );
+$('#list').click( function() { 
+	location.href = "${pageContext.request.contextPath}/list";
+	return false;
+	} );
+});
+</script>
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/head.jsp" />
@@ -25,9 +42,9 @@ pageEncoding="ISO-8859-1"%>
 		<div class="content">
 			<div class="btn-top-container">
 			<div id ="new" class="btn-top color-green"><span class="icon-more-w icon"></span><span class="text">New</span></div>
-			<div id="join" class="btn-top color-gray"><span class="icon-join-w icon"></span><span class="text">Search</span></div>
-			<div class="btn-top color-green"><span class="icon-leave-w icon"></span><span class="text">Hotel List</span></div>
-			<div class="btn-top color-gray"><span class="icon-help-w icon"></span><span class="text">Help</span></div>
+			<div id="search" class="btn-top color-gray"><span class="icon-join-w icon"></span><span class="text">Search</span></div>
+			<div id="list"  class="btn-top color-green"><span class="icon-list-w icon"></span><span class="text">Hotel List</span></div>
+			<div id="help" class="btn-top color-gray"><span class="icon-help-w icon"></span><span class="text">Help</span></div>
 			</div>
 			
 			<div class="item-container">

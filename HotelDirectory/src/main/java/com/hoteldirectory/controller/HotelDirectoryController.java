@@ -115,7 +115,7 @@ public class HotelDirectoryController {
 	}
 	
 	@RequestMapping(value = "/getCity", method ={ RequestMethod.GET, RequestMethod.POST })
-	 public @ResponseBody List<City> getCities(@RequestParam String city) {
+	 public @ResponseBody List<City> getCities(@RequestParam("term") String city) {
 		System.out.println(city);
 	 return simulateSearchResult(city);
 	 
@@ -125,15 +125,26 @@ public class HotelDirectoryController {
 	private List<City> simulateSearchResult(String tagName) {
 		 
 		List<City> result = new ArrayList<City>();
- 
 		List<City> cityList = cityConn.list();
-		for (City city : cityList) {
-			if (city.getName().contains(tagName)) {
+		for (City city : cityList) { 
+			if (city.getName().toLowerCase().contains(tagName.toLowerCase())) {
+				System.out.println(city.getName());
 				result.add(city);
 			}
 		}
  
 		return result;
 	}
+	
+	@RequestMapping(value = "/getMachedNames", method = 
+	        RequestMethod.GET)
+	    public @ResponseBody
+	    List<String> getMachedNames(@RequestParam("term") String name){
+	    
+	    List<String> matchName = new ArrayList<String>();
+	    matchName.add("Hello1"); matchName.add("Hello2"); matchName.add("Hello3");
+
+	    return matchName;
+	    }
 
 }

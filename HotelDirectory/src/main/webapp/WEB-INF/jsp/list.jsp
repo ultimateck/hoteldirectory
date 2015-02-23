@@ -10,7 +10,8 @@
     <body>
         <div align="center">
             <h1>Hotel List</h1>
-            <h3><a href="saveHotel">New Hotel</a></h3>
+            
+            <div class="tablecss">
             <table border="">
             	<tr>
 	                <th>No</th>
@@ -43,6 +44,9 @@
             		</c:otherwise>
                 </c:choose>      
             </table>
+            </div>
+            <br>
+            <h3><a href="saveHotel" class="btn">New Hotel</a></h3>
         </div>
     </body>
 </html>

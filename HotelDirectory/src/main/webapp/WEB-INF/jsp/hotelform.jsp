@@ -8,9 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New/Edit Hotel Details</title>
 <base href="${pageContext.request.contextPath}/">
+<style>
+td {padding: 10px;}
+</style>
 </head>
 <body>
-    <div align="center">
+    <div align="center" class="item-container-detail">
     <c:choose>
         <c:when test="${empty msg}">
         <h2>Add New Hotel</h2>
@@ -37,7 +40,7 @@
             </tr>
             <tr>
                 <td>Status:</td>
-                <td><form:input path="status" value="1"/></td>
+                <td><form:input type="number" path="status" value="1"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Save">

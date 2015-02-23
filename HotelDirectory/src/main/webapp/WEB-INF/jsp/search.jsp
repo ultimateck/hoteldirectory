@@ -16,16 +16,14 @@ $( "input[type=submit],button" )
 });
 
 $(document).ready(function() {
-	 $(function() {
+	  $(function() {
 		 $( "#citys" ).autocomplete({
 		 source: function (request, response) {
-			 alert("T");
+			 
 	            $.getJSON("${pageContext.request.contextPath}/getCity", request, function(result) {
-	                response($.map(result, function(item) {
+	                response($.map(result, function(item) { 
 	                    return {
-	                        // following property gets displayed in drop down
-	                        label: item.name ,
-	                        // following property gets entered in the textbox
+	                        data: item.name ,                        
 	                        value: item.name,
 	                        
 	                    };
@@ -33,8 +31,20 @@ $(document).ready(function() {
 	            });
 	        }
 		 });
-		 });});
+		 }); 
+	/* $(function() {      
+        $("#citys").autocomplete({
+            source: function (request, response) {
+                $.getJSON("${pageContext.request.contextPath}/getCity", {
+                    term: request.term
+                }, response);
+            }
+        });
+    }); */
+		 });
 </script>
+
+
 	<div class="item-container-head" align="center">
 		<div class="ui-widget">
 			<label for="citys">Enter City: </label>
@@ -44,7 +54,8 @@ $(document).ready(function() {
 	</div>
 
     <div align="center" class="item-container-detail">
-            <h1>Hotel List ${city}</h1>
+            <h1>Hotel List ${city}</h1><br>
+            <div class="tablecss">
             <table border="">
             	<tr>
 	                <th>No</th>
@@ -72,5 +83,6 @@ $(document).ready(function() {
             		</c:otherwise>
                 </c:choose>      
             </table>
+            </div>
         </div>
 </html>
